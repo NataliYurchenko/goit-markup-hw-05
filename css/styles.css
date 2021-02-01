@@ -107,6 +107,9 @@ header {
 }
 
 .site-nav .link {
+  padding-top: 32px;
+  padding-bottom: 32px;
+
   color: var(--maine-text-color);
   font-weight: 500;
   line-height: 1.143;
@@ -129,26 +132,36 @@ header {
   text-decoration: none;
 }
 
-.site-nav .current {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-}
-
 /* варіант 1 */
 
+.site-nav .current {
+  position: relative;
+  color: var(--accent-color);
+}
+
 .site-nav .current::after {
+  position: absolute;
   content: '';
+  bottom: 0;
+  left: 0;
   display: block;
-  margin-top: 28px;
+  /* margin-top: 28px; */
   height: 4px;
+  width: 100%;
   background-color: var(--accent-color);
   border-radius: 2px;
-
   align-self: flex-end;
 }
 
+/* варіант 1-A */
+
+/* 
 .site-nav-current-div {
   display: flex;
 }
+.site-nav .current {
+  align-self: flex-end;
+} */
 
 /* варіант 2 */
 
@@ -173,10 +186,12 @@ header {
 .site-nav .current::after {
   flex-grow: 1;
 }
+*/
+
 .contact-mail,
 .contact-tel {
   fill: currentColor;
-} */
+}
 
 .contact-mail {
   width: 16px;
@@ -206,12 +221,6 @@ header .contact {
 .site-nav .link:focus,
 .contact .link:hover,
 .contact .link:focus {
-  color: var(--accent-color);
-}
-
-/* ==============    ПОТОЧНА СТОРІНКА */
-
-.site-nav .current {
   color: var(--accent-color);
 }
 
@@ -510,6 +519,20 @@ header .contact {
 .team img,
 .portfolio img {
   display: block;
+}
+
+.job-link {
+  color: var(--maine-text-color);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.job-text {
+  min-height: 70px;
 }
 
 /* ==================   TEAM  ===Наша команда */
