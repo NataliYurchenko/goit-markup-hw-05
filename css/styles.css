@@ -129,6 +129,26 @@ header {
   text-decoration: none;
 }
 
+.site-nav-current-div {
+  position: relative;
+}
+
+.site-nav .current {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.site-nav .current::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  /* display: block; */
+  /* margin-top: 28px; */
+  height: 4px;
+  background-color: var(--accent-color);
+  border-radius: 2px;
+}
+
 .contact-mail,
 .contact-tel {
   fill: currentColor;
@@ -275,8 +295,8 @@ header .contact {
 }
 
 .portfolio-item {
-  width: 370px;
-  /* width: calc(100% / 3 - 30px); */
+  /* width: 370px; */
+  flex-basis: calc(100% / 3 - 30px);
   margin: 15px;
 
   background-color: var(--primary-white-color);
@@ -326,47 +346,6 @@ header .contact {
   color: var(--secondary-text-color);
   font-size: 16px;
 }
-
-/* ============old footer========== */
-
-/* footer {
-  background-color: var(--footer-background);
-  padding-top: 60px;
-  padding-bottom: 60px;
-}
-
-
-.basement li:not(:last-child) {
-  margin-bottom: 9px;
-}
-
-.basement > .logo {
-  display: inline-block;
-  padding: 0px;
-  margin-bottom: 20px;
-}
-
-.basement .web,
-.basement .footer-studio {
-  display: inline-block;
-  padding: 0;
-}
-
-.basement .list {
-  display: inline-block;
-  line-height: 1.71;
-}
-
-.footer-address .link {
-  color: var(--primary-white-color);
-  font-style: normal;
-  text-decoration: none;
-}
-
-.footer-address .mail,
-.footer-address .tel {
-  color: #ffffff99;
-} */
 
 /* ==============      HERO  =================== */
 
