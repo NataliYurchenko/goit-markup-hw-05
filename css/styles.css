@@ -145,48 +145,12 @@ header {
   bottom: 0;
   left: 0;
   display: block;
-  /* margin-top: 28px; */
   height: 4px;
   width: 100%;
   background-color: var(--accent-color);
   border-radius: 2px;
   align-self: flex-end;
 }
-
-/* варіант 1-A */
-
-/* 
-.site-nav-current-div {
-  display: flex;
-}
-.site-nav .current {
-  align-self: flex-end;
-} */
-
-/* варіант 2 */
-
-/* .site-nav-current-div {
-  position: relative;
-}
-
-.site-nav .current::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: '';
-  height: 4px;
-  background-color: var(--accent-color);
-  border-radius: 2px;
-} */
-
-/* варіант 3 */
-/* .site-nav-current-div {
-  flex-direction: column;
-}
-.site-nav .current::after {
-  flex-grow: 1;
-}
-*/
 
 .contact-mail,
 .contact-tel {
@@ -210,6 +174,11 @@ header {
 header .contact {
   display: flex;
   margin-left: auto;
+}
+.contact .link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact .item + .item {
@@ -288,6 +257,8 @@ header .contact {
 .button.secondary:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .button.secondary.all {
@@ -379,6 +350,79 @@ header .contact {
   color: var(--secondary-text-color);
   font-size: 16px;
 }
+
+.portfolio-overlay {
+  position: relative;
+}
+
+.portfolio-overlay-text {
+  position: absolute;
+  margin: 0;
+  padding: 63px 24px;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+
+  color: var(--primary-white-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.556;
+  letter-spacing: 0.03;
+}
+
+/* .portfolio-overlay,
+.portfolio-img {
+  position: relative;
+}
+
+.portfolio-img::before {
+  display: inline-block;
+  position: absolute;
+
+  content: 'Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.';
+  width: 100%;
+  height: 100%;
+
+  top: 0px;
+  left: 0px;
+
+  color: var(--primary-white-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.556;
+  letter-spacing: 0.03;
+} */
+
+/* .portfolio-link {
+  position: relative;
+} */
+
+/* .portfolio-link::before {
+  display: inline-block;
+  position: absolute;
+
+  content: 'Технокряк это современная площадка распространения коронавируса. Компании используют эту платформу для цифрового шпионажа и атак на защищённые сервера конкурентов.';
+  width: 100%;
+  height: 100%;
+  
+
+  top: 0px;
+  left: 0px;
+
+  color: var(--primary-white-color);
+  background-color: rgba(33, 150, 243, 0.9);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.556;
+  letter-spacing: 0.03;
+} */
+
+/* transform: translate(-50%, 50%);
+  top: 50%;
+  left: 50%; */
 
 /* ==============      HERO  =================== */
 
@@ -492,7 +536,10 @@ header .contact {
 
 .job-list {
   display: flex;
-  justify-content: space-between;
+}
+
+.job-link {
+  text-decoration: none;
 }
 
 .job-item {
@@ -521,18 +568,27 @@ header .contact {
   display: block;
 }
 
-.job-link {
-  color: var(--maine-text-color);
+.job-text {
+  min-height: 70px;
+  margin: 0;
+
+  color: var(--primary-white-color);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.143;
   text-align: center;
   text-transform: uppercase;
-  text-decoration: none;
+  padding: 27px 0;
 }
 
+.job-thumb {
+  position: relative;
+}
 .job-text {
-  min-height: 70px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(47, 48, 58, 0.8);
 }
 
 /* ==================   TEAM  ===Наша команда */
