@@ -27,7 +27,7 @@ font-family: 'Roboto', sans-serif; */
   --button-secondary-background: #f5f4fa;
   --frame-portfolio-photo: #eeeeee;
   --icons-color: #afb1b8;
-  --transition-duration: 750ms;
+  --transition-duration: 2500ms;
   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -76,10 +76,7 @@ header {
   letter-spacing: 0.03em;
   text-decoration: none;
 
-  transition-property: color;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-  transition-delay: 0;
+  transition: color var(--transition-duration) var(--transition-timing-function);
 }
 
 .header-studio {
@@ -127,7 +124,6 @@ header {
 .contact .item {
   display: flex;
   align-items: center;
-  /* justify-content: center; */
   margin: 0;
 }
 
@@ -195,10 +191,11 @@ header .contact {
 .site-nav .link,
 .contact .link,
 .contact .link {
-  transition-property: color;
+  transition: color var(--transition-duration) var(--transition-timing-function);
+  /* transition-property: color;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
-  transition-delay: 0;
+  transition-delay: 0; */
 }
 
 .site-nav .link:hover,
@@ -249,9 +246,8 @@ header .contact {
   line-height: 1.88;
   letter-spacing: 0.06em;
 
-  transition-property: box-shadow;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
+  transition: box-shadow var(--transition-duration)
+    var(--transition-timing-function);
 }
 
 .button.primary:hover,
@@ -280,7 +276,6 @@ header .contact {
   transition-property: color, background-color, box-shadow;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
-  transition-delay: 0;
 }
 
 .button.secondary:hover,
@@ -322,7 +317,7 @@ header .contact {
   display: block;
   text-decoration: none;
 
-  transition-property: box-shadow, button;
+  transition-property: box-shadow, transform;
   transition-duration: var(--transition-duration);
   transition-timing-function: var(--transition-timing-function);
 }
@@ -376,6 +371,7 @@ header .contact {
 
 .portfolio-overlay {
   position: relative;
+  overflow: hidden;
 }
 
 .portfolio-overlay-text {
@@ -396,16 +392,16 @@ header .contact {
 
   opacity: 0;
 
-  /* transition-property: bottom, left; */
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-  transition-delay: 0;
+  transform: translatey(100%);
+
+  transition: transform var(--transition-duration)
+      var(--transition-timing-function),
+    opacity var(--transition-duration) var(--transition-timing-function);
 }
 
 .portfolio-link:hover .portfolio-overlay-text {
   opacity: 1;
-  /* left: 0; */
-  bottom: 100%;
+  transform: translatey(0);
 }
 
 /* ==============      HERO  =================== */
@@ -552,27 +548,25 @@ header .contact {
   display: block;
 }
 
+.job-thumb {
+  position: relative;
+}
+
 .job-text {
-  min-height: 70px;
+  position: absolute;
+  height: auto;
+  width: 100%;
   margin: 0;
+  bottom: 0;
 
   color: var(--primary-white-color);
+  background: rgba(47, 48, 58, 0.8);
   font-weight: 700;
   font-size: 14px;
   line-height: 1.143;
   text-align: center;
   text-transform: uppercase;
   padding: 27px 0;
-}
-
-.job-thumb {
-  position: relative;
-}
-.job-text {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: rgba(47, 48, 58, 0.8);
 }
 
 /* ==================   TEAM  ===Наша команда */
@@ -654,6 +648,10 @@ header .contact {
 
   color: var(--icons-color);
   border-radius: 50%;
+
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    color var(--transition-duration) var(--transition-timing-function);
 }
 
 .soclink-icon {
@@ -672,13 +670,11 @@ header .contact {
   margin-left: 10px;
 }
 
-.soclink:hover {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
+.soclink:hover,
 .soclink:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+
   outline: none;
 }
 
@@ -711,6 +707,10 @@ section.clients {
   border: 1px solid #afb1b8;
   box-sizing: border-box;
   border-radius: 4px;
+
+  transition: border var(--transition-duration)
+      var(--transition-timing-function),
+    color var(--transition-duration) var(--transition-timing-function);
 }
 
 .clients .item + .item {
@@ -789,10 +789,9 @@ footer .soclink {
   color: var(--primary-white-color);
   background: rgba(255, 255, 255, 0.1);
 
-  transition-property: background-color;
-  transition-duration: var(--transition-duration);
-  transition-timing-function: var(--transition-timing-function);
-  transition-delay: 0;
+  transition: background-color var(--transition-duration)
+      var(--transition-timing-function),
+    box-shadow var(--transition-duration) var(--transition-timing-function);
 }
 
 footer .soclink:hover,
@@ -849,14 +848,14 @@ footer b {
 
 .backdrop {
   position: fixed;
-  width: 100%;
-  height: 1117px;
-  /* height: 1024px; */
+  width: 100vw;
+  height: 100vh;
 
   top: 0;
   left: 0;
   background-color: rgba(0, 0, 0, 0.2);
 }
+
 .backdrop.is-hidden {
   opacity: 0;
   pointer-events: none;
@@ -867,15 +866,16 @@ footer b {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
   width: 528px;
   height: 581px;
-  background: #ffffff;
+  background: var(--primary-white-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 }
 
-.modal-close {
+.btn-modal-close {
   position: absolute;
   top: 8px;
   right: 8px;
@@ -883,6 +883,7 @@ footer b {
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -895,6 +896,7 @@ footer b {
 }
 
 .icon-close {
+  /* fill: currentColor; */
   fill: var(--header-studio-color);
 }
 
