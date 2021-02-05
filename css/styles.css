@@ -27,7 +27,7 @@ font-family: 'Roboto', sans-serif; */
   --button-secondary-background: #f5f4fa;
   --frame-portfolio-photo: #eeeeee;
   --icons-color: #afb1b8;
-  --transition-duration: 2500ms;
+  --transition-duration: 250ms;
   --transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
