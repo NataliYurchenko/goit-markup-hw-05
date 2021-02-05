@@ -401,7 +401,8 @@ header .contact {
     opacity var(--transition-duration) var(--transition-timing-function);
 }
 
-.portfolio-link:hover .portfolio-overlay-text {
+.portfolio-link:hover .portfolio-overlay-text,
+.portfolio-link:focus .portfolio-overlay-text {
   opacity: 1;
   transform: translatey(0);
 }
