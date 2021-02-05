@@ -111,6 +111,7 @@ header {
 }
 
 .site-nav .link {
+  display: block;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -127,13 +128,16 @@ header {
   margin: 0;
 }
 
-.contact .link {
+/* .contact .link {
+  display: block;
+  padding-top: 32px;
+  padding-bottom: 32px;
   color: var(--secondary-text-color);
   font-weight: 500;
   line-height: 1.143;
   letter-spacing: 0.02em;
   text-decoration: none;
-}
+} */
 
 .site-nav .current {
   position: relative;
@@ -180,6 +184,17 @@ header .contact {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.contact .link {
+  /* display: block; */
+  padding-top: 32px;
+  padding-bottom: 32px;
+  color: var(--secondary-text-color);
+  font-weight: 500;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  text-decoration: none;
 }
 
 .contact .item + .item {
@@ -240,19 +255,20 @@ header .contact {
 .button.primary {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   outline: none;
 
   font-weight: 700;
   line-height: 1.88;
   letter-spacing: 0.06em;
 
-  transition: box-shadow var(--transition-duration)
+  transition: background-color var(--transition-duration)
     var(--transition-timing-function);
 }
 
 .button.primary:hover,
 .button.primary:focus {
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  background-color: #188ce8;
 }
 
 /*============== BUTTON PORTFOLIO(SECONDARY)======= */
@@ -388,7 +404,7 @@ header .contact {
   font-weight: 400;
   font-size: 18px;
   line-height: 1.556;
-  letter-spacing: 0.03;
+  letter-spacing: 0.03em;
 
   opacity: 0;
 
@@ -421,9 +437,6 @@ header .contact {
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
-}
-
-.overlay {
   max-width: 1600px;
   min-height: 600px;
   margin-left: auto;
@@ -440,6 +453,28 @@ header .contact {
   background-position: center;
   background-size: cover;
 }
+
+/* .overlay {
+
+} */
+
+/* .overlay {
+  max-width: 1600px;
+  min-height: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--hero-background);
+  background-image: linear-gradient(
+      to right,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url(../images/maine/hero-bg-opt.jpg);
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
 
 /* =============== BENEFITS =========== */
 
@@ -631,7 +666,7 @@ header .contact {
 
 .socnetworks {
   display: flex;
-  margin: 16px 32px 30px;
+  padding: 16px 32px 30px;
 }
 
 .socnetworks li {
@@ -857,11 +892,13 @@ footer b {
 
   opacity: 1;
   transition: opacity var(--transition-duration)
-    var(--transition-timing-function);
+      var(--transition-timing-function),
+    visibility var(--transition-duration) var(--transition-timing-function);
 }
 
 .backdrop.is-hidden .modal {
-  transform: translate(-50%, -50%) scale(0.9);
+  /* transform: translate(-50%, -50%) scale(0.9); */
+  transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .backdrop.is-hidden {
@@ -885,7 +922,8 @@ footer b {
 
   transition: transform var(--transition-duration)
     var(--transition-timing-function);
-  transform: translate(-50%, -50%) scale(1);
+  /* transform: translate(-50%, -50%) scale(1); */
+  transform: translate(-50%, -50%) rotate(180deg);
 }
 
 .btn-modal-close {
@@ -911,5 +949,24 @@ footer b {
 .icon-close {
   fill: var(--header-studio-color);
 }
+
+/* .box:hover {
+  animation-name: changeBgColor;
+  animation-duration: 3000ms;
+  animation-timing-function: linear;
+}
+
+@keyframes changeBgColor {
+  0% {
+    background-color: teal;
+  }
+
+  50% {
+    background-color: orange;
+  }
+
+  100% {
+    background-color: deepskyblue;
+  } */
 
 /* ============================================== */
